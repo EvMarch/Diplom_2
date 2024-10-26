@@ -27,7 +27,7 @@ class DataCreate:
 
     # функция генерации фэйковых данных без поля "Login"
     @staticmethod
-    def generating_fake_invalid_data_to_create_user_without_login_field():
+    def generating_fake_invalid_data_to_create_user_without_name_field():
         fake = Faker("ru_RU")
         data = {
             "email": fake.email(),
@@ -39,7 +39,7 @@ class DataCreate:
 
     # функция генерации фэйковых данных без поля "Password"
     @staticmethod
-    def generating_fake_invalid_data_to_create_courier_without_password_field():
+    def generating_fake_invalid_data_to_create_user_without_password_field():
         fake = Faker("ru_RU")
         data = {
             "email": fake.email(),
@@ -62,7 +62,7 @@ class StatusCode:
     INTERNAL_SERVER_ERROR = 500
 
 class TextResponse:
-    CREATE_USER = '{"ok": true}'
     CREATE_DOUBLE_USER = 'User already exists'
     SERVER_ERROR = 'Internal Server Error'
     UNAUTHORIZED = 'You should be authorised'
+    CREATE_USER_ERROR = 'Email, password and name are required fields'

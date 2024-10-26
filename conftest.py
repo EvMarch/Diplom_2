@@ -10,7 +10,7 @@ from endpoints import Endpoints
 @pytest.fixture
 def create_new_user():
     payload = DataCreate.generating_fake_valid_data_to_create_user()
-    response = requests.post(Urls.BASE_URL + Endpoints.CREATE_USER, data=payload)
+    response = requests.post(Urls.BASE_URL + Endpoints.CREATE_USER, json=payload)
     yield payload, response
     token = response.json()["accessToken"]
     requests.delete(Urls.BASE_URL + Endpoints.DELETE_USER, headers={"Authorization": token})

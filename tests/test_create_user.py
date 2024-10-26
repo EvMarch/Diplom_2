@@ -31,6 +31,5 @@ class TestCreateUser:
                                            DataCreate.generating_fake_invalid_data_to_create_user_without_name_field(),
                                            DataCreate.generating_fake_invalid_data_to_create_user_without_password_field()])
     def test_registration_user_without_parameters_failed(self, new_user):
-        #payload = create_new_user
         response = requests.post(f'{Urls.BASE_URL}{Endpoints.CREATE_USER}', json=new_user)
         assert TextResponse.CREATE_USER_ERROR in response.text and response.status_code == StatusCode.FORBIDDEN

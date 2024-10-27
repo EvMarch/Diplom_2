@@ -66,3 +66,14 @@ class TextResponse:
     SERVER_ERROR = 'Internal Server Error'
     UNAUTHORIZED = 'You should be authorised'
     CREATE_USER_ERROR = 'Email, password and name are required fields'
+
+class UserData:
+    VALID_USER_DATA = {
+        "email": "test-data@yandex.ru",
+        "password": "password"
+    }
+
+    INVALID_USER_DATA = {
+            "email": "invaliduser@example.com",
+            "password": "wrongpassword"
+    }

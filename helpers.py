@@ -66,6 +66,7 @@ class TextResponse:
     SERVER_ERROR = 'Internal Server Error'
     UNAUTHORIZED = 'You should be authorised'
     CREATE_USER_ERROR = 'Email, password and name are required fields'
+    INGREDIENTS = 'Ingredient ids must be provided'
 
 class UserData:
     VALID_USER_DATA = {
@@ -77,3 +78,14 @@ class UserData:
             "email": "invaliduser@example.com",
             "password": "wrongpassword"
     }
+
+class Order:
+
+    VALID_HASH_INGREDIENT = {
+        "ingredients": ["61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f"]
+        }
+
+
+    INVALID_HASH_INGREDIENT = {
+        "ingredients": ["1234567abcdefg6jt544sd", "87654321abcdef9832kj3458"]
+        }

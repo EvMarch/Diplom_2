@@ -1,8 +1,8 @@
 import allure
 import requests
-from helpers import StatusCode, UserData, DataCreate
+from helpers import DataCreate
 from endpoints import Endpoints
-from urls import Urls
+from urls_credits import StatusCode, Urls, TextResponse
 import pytest
 
 class TestUpdateUser:
@@ -29,4 +29,4 @@ class TestUpdateUser:
     ])
     def test_update_user_authorization(self, data):
         response = requests.patch(f'{Urls.BASE_URL}{Endpoints.UPDATE_USER}', data=data)
-        assert response.json()['success'] is False and StatusCode.UNAUTHORIZED
+        assert TextResponse.UNAUTHORIZED in response.text and StatusCode.UNAUTHORIZED

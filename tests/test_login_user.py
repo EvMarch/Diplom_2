@@ -1,8 +1,7 @@
 import allure
 import requests
-from helpers import StatusCode, UserData
 from endpoints import Endpoints
-from urls import Urls
+from urls_credits import Urls, StatusCode, UserData, TextResponse
 
 class TestLoginUser:
 
@@ -16,4 +15,4 @@ class TestLoginUser:
     @allure.description('Запрос на логин с неверным логином и паролем')
     def test_user_login_wrong_login_password_failed(self):
         response = requests.post(f'{Urls.BASE_URL}{Endpoints.LOGIN_USER}', json=UserData.INVALID_USER_DATA)
-        assert response.json()['success'] is False and StatusCode.UNAUTHORIZED
+        assert TextResponse.UNCORRECT in response.text and response.status_code == StatusCode.UNAUTHORIZED

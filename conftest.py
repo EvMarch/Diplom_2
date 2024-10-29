@@ -2,7 +2,7 @@ import pytest
 import requests
 
 from helpers import DataCreate
-from urls import Urls
+from urls_credits import Urls
 from endpoints import Endpoints
 
 

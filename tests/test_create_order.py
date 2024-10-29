@@ -1,14 +1,11 @@
 import allure
 import requests
-from helpers import StatusCode, UserData, DataCreate, Order, TextResponse
 from endpoints import Endpoints
-from urls import Urls
-import pytest
-
+from urls_credits import Urls,  StatusCode, Order, TextResponse
 
 class TestOrderCreate:
 
-    @allure.title('Проверка создания заказа с авторизациейс ингредиентами')
+    @allure.title('Проверка создания заказа с авторизацией с ингредиентами')
     @allure.description('Отправляем запрос на создание заказа с предварительной авторизацией и получением токена (валидный хэш ингредиентов)')
     def test_create_order_authorization_success(self, create_new_user):
         user_token = create_new_user[1].json()["accessToken"]

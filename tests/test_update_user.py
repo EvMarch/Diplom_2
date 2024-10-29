@@ -1,8 +1,8 @@
 import allure
 import requests
-from helpers import DataCreate
-from endpoints import Endpoints
-from urls_credits import StatusCode, Urls, TextResponse
+from data.helpers import DataCreate
+from data.endpoints import Endpoints
+from data.urls_credits import StatusCode, Urls, TextResponse
 import pytest
 
 class TestUpdateUser:

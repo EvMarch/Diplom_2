@@ -1,7 +1,7 @@
 import requests
 import allure
-from endpoints import Endpoints
-from urls_credits import Urls,  StatusCode, Order, TextResponse
+from data.endpoints import Endpoints
+from data.urls_credits import Urls,  StatusCode, Order, TextResponse
 
 class TestGetOrder:
 

@@ -1,9 +1,9 @@
 import pytest
 import requests
 
-from helpers import DataCreate
-from urls_credits import Urls
-from endpoints import Endpoints
+from data.helpers import DataCreate
+from data.urls_credits import Urls
+from data.endpoints import Endpoints
 
 
 # Фикстура создания / удаления пользователя

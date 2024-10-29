@@ -1,9 +1,9 @@
 import allure
 import pytest
 import requests
-from endpoints import Endpoints
-from helpers import DataCreate
-from urls_credits import Urls, TextResponse, StatusCode
+from data.endpoints import Endpoints
+from data.helpers import DataCreate
+from data.urls_credits import Urls, TextResponse, StatusCode
 
 
 class TestCreateUser:
